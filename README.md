@@ -53,12 +53,12 @@ pip install -r requirements.txt
 
 ---
 
-🚀 Usage
+## 🚀 Usage
 Run 1-qubit simulation
-python bloch_simulator_1qbit.py
+python bloch_simulator_1_qbit.py
 
 Run 2-qubit simulation
-python bloch_simulator_2qbits.py
+python bloch_simulator_2_qbits.py
 
 
 Both scripts generate:
@@ -73,7 +73,7 @@ Animations
 
 ---
 
-📚 Background
+## 📚 Background
 
 The project was built to deepen my expertise in:
 
@@ -87,13 +87,13 @@ It complements my academic training in quantum computing engineering, as well as
 
 ---
 
-📄 License
+## 📄 License
 
 This project is licensed under the MIT License — see the LICENSE file for details.
 
 ---
 
-🙋‍♂️ Author
+## 🙋‍♂️ Author
 
 LETTY Naïl
 Engineering student at ISAE-Supaero (France)
