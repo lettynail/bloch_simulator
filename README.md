@@ -40,7 +40,7 @@ Animations and plots are generated automatically using **Matplotlib**.
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/bloch_simulator.git
+git clone https://github.com/lettynail/bloch_simulator.git
 cd bloch_simulator
 
 Create a virtual environment and install dependencies:
@@ -95,7 +95,7 @@ This project is licensed under the MIT License — see the LICENSE file for deta
 
 🙋‍♂️ Author
 
-[Your Name]
+LETTY Naïl
 Engineering student at ISAE-Supaero (France)
 Focused on quantum computing, quantum information, and quantum simulation
 Currently seeking a research internship (Fall 2026) in quantum computing
