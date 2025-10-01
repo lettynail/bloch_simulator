@@ -44,17 +44,17 @@ Animations and plots are generated automatically using Matplotlib.
 
 Clone the repository:
 
-git clone https://github.com/lettynail/bloch_simulator.git
-cd bloch_simulator
+  git clone https://github.com/lettynail/bloch_simulator.git
+  cd bloch_simulator
 
 
 Create a virtual environment and install dependencies:
 
-python -m venv .venv
-source .venv/bin/activate   # Linux / macOS
-.venv\Scripts\activate      # Windows
+  python -m venv .venv
+  source .venv/bin/activate   # Linux / macOS
+  .venv\Scripts\activate      # Windows
 
-pip install -r requirements.txt
+  pip install -r requirements.txt
 
 🚀 Usage
 
