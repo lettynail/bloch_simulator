@@ -1,0 +1,11 @@
+LICENSE.txt
+pyproject.toml
+src/bloch_simulator/__init__.py
+src/bloch_simulator/bloch_simulator_1_qbit.py
+src/bloch_simulator/bloch_simulator_2_qbits.py
+src/bloch_simulator.egg-info/PKG-INFO
+src/bloch_simulator.egg-info/SOURCES.txt
+src/bloch_simulator.egg-info/dependency_links.txt
+src/bloch_simulator.egg-info/entry_points.txt
+src/bloch_simulator.egg-info/requires.txt
+src/bloch_simulator.egg-info/top_level.txt

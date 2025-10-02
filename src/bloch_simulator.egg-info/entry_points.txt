@@ -1,0 +1,3 @@
+[console_scripts]
+bloch-1q = bloch_simulator.bloch_simulator_1_qbit:main
+bloch-2q = bloch_simulator.bloch_simulator_2_qbits:main

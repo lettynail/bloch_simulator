@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bloch-simulator"
+version = "0.1.0"
+description = "Bloch sphere simulators for 1 and 2 qubits with Kraus noise, metrics, and animations."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "LETTY Naïl"}]
+dependencies = [
+  "numpy>=1.24",
+  "matplotlib>=3.7",
+  "scipy>=1.11",
+  "qiskit>=1.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/lettynail/bloch_simulator"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+bloch-1q = "bloch_simulator.bloch_simulator_1_qbit:main"
+bloch-2q = "bloch_simulator.bloch_simulator_2_qbits:main"
