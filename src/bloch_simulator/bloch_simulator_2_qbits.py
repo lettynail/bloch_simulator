@@ -225,7 +225,7 @@ def radius(points: Iterable[Tuple[float, float, float]], dt: float =1.0, title="
     plt.title(title)
     plt.ylim(0, 1.05)
     plt.grid(True, alpha=0.25)
-    plt.show()
+
     return radius
 
 def purity(rho: DensityMatrix) -> float:
@@ -273,7 +273,7 @@ def plot_purity(pur_list, dt=1.0, title="Purity Tr(ρ²)(t)") -> None:
     t = np.arange(len(pur_list))*dt
     plt.figure(figsize=(6,3.2))
     plt.plot(t, pur_list, lw=2); plt.ylim(0,1.01); plt.grid(alpha=.25)
-    plt.xlabel("Time"); plt.ylabel("Purity Tr(ρ²)"); plt.title(title); plt.show()
+    plt.xlabel("Time"); plt.ylabel("Purity Tr(ρ²)"); plt.title(title)
 
 def plot_entropy_lists(S_list, dt=1.0, title="Von Neumann entropy S(ρ)(t)") -> None:
     t = np.arange(len(S_list))*dt
@@ -281,7 +281,7 @@ def plot_entropy_lists(S_list, dt=1.0, title="Von Neumann entropy S(ρ)(t)") -> 
     plt.plot(t, S_list, lw=2)   
     plt.ylim(0, None); plt.grid(alpha=.25)
     plt.xlabel("Time"); plt.ylabel("S(ρ)")
-    plt.title(title); plt.show()
+    plt.title(title)
 
 def plot_concurrence(C_list, dt=1.0, title="Wootters concurrence C(t)") -> None:
     t = np.arange(len(C_list))*dt
@@ -289,7 +289,7 @@ def plot_concurrence(C_list, dt=1.0, title="Wootters concurrence C(t)") -> None:
     plt.plot(t, C_list, lw=2)
     plt.ylim(0, 1.02); plt.grid(alpha=.25)
     plt.xlabel("Time"); plt.ylabel("C")
-    plt.title(title); plt.show()
+    plt.title(title)
 
 
 
@@ -426,6 +426,6 @@ def animate_trajectory(points_A, points_B, interval_ms=25, show_trail=True) -> T
 
     anim_A = FuncAnimation(fig, update_A, frames=len(pts_A), interval=interval_ms, blit=False, repeat=True)
     anim_B = FuncAnimation(fig, update_B, frames=len(pts_B), interval=interval_ms, blit=False, repeat=True)
-    plt.show()
+
     return anim_A, anim_B
 
