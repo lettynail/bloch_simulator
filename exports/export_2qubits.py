@@ -8,10 +8,10 @@ from qiskit.quantum_info import Statevector, DensityMatrix
 from bloch_simulator import (
     H1, I1, CX,
     embed2, total_noise_steps,
-    discreet_depolarizing_2q, discreet_T1_2q, discreet_T2_2q,
+    discreet_depolarizing, discreet_T1, discreet_T2,
     continuous_path_2q, entropy_vN, concurrence_2q,
-    radius_2q, plot_purity, plot_entropy_lists, plot_concurrence,
-    animate_trajectory_2q
+    radius, plot_purity, plot_entropy_lists, plot_concurrence,
+    animate_trajectory
 )
 
 matplotlib.use("Agg")
@@ -36,7 +36,7 @@ t_noise_steps = total_noise_steps(0, n_seq, steps_per_gate=steps_per_gate, n_ops
 t_noise = t_noise_steps * dt
 
 # --- discretized channels (apply on qubit A only, identity on B) ---
-kraus_T1_A = discreet_T1_2q(t_noise, 0.4, total_steps=t_noise_steps)
+kraus_T1_A = discreet_T1(t_noise, 0.4, total_steps=t_noise_steps)
 kraus_I_B  = [[I1, I1]]  # dummy identity list to match shapes
 kraus_channels = [  # lift to 4x4
     [k for k in ( __import__('numpy').kron(a, b) for a, b in zip(kraus_T1_A, kraus_I_B[0]) )]
@@ -60,19 +60,19 @@ C  = [concurrence_2q(r) for r in rhos]
 os.makedirs("exports/plots/2_qubits", exist_ok=True)
 os.makedirs("exports/animations/2_qubits", exist_ok=True)
 
-radius_2q(pts0_A, dt, title="A radius without noise")
+radius(pts0_A, dt, title="A radius without noise")
 plt.gcf().savefig("exports/plots/2_qubits/2q_radius_A_noiseless.png", dpi=300, bbox_inches="tight")
 plt.close()
 
-radius_2q(pts0_B, dt, title="B radius without noise")
+radius(pts0_B, dt, title="B radius without noise")
 plt.gcf().savefig("exports/plots/2_qubits/2q_radius_B_noiseless.png", dpi=300, bbox_inches="tight")
 plt.close()
 
-radius_2q(pts_A,  dt, title="A radius with noise")
+radius(pts_A,  dt, title="A radius with noise")
 plt.gcf().savefig("exports/plots/2_qubits/2q_radius_A_noisy.png", dpi=300, bbox_inches="tight")
 plt.close()
 
-radius_2q(pts_B,  dt, title="B radius with noise")
+radius(pts_B,  dt, title="B radius with noise")
 plt.gcf().savefig("exports/plots/2_qubits/2q_radius_B_noisy.png", dpi=300, bbox_inches="tight")
 plt.close()
 
@@ -115,12 +115,12 @@ plt.close()
 
 writer = FFMpegWriter(fps=15, bitrate=1800)
 
-anim0 = animate_trajectory_2q(pts0_A, pts0_B, interval_ms=20)
+anim0 = animate_trajectory(pts0_A, pts0_B, interval_ms=20)
 anim0[0].save("exports/animations/2_qubits/2q_noiseless_A.mp4", writer=writer, dpi = 80)
 anim0[1].save("exports/animations/2_qubits/2q_noiseless_B.mp4", writer=writer, dpi = 80)
 plt.close()
 
-anim = animate_trajectory_2q(pts_A,  pts_B,  interval_ms=20)
+anim = animate_trajectory(pts_A,  pts_B,  interval_ms=20)
 anim0[0].save("exports/animations/2_qubits/2q_noisy_A.mp4", writer=writer, dpi = 80)
 anim0[1].save("exports/animations/2_qubits/2q_noisy_B.mp4", writer=writer, dpi = 80)
 plt.close()
