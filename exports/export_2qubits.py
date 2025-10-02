@@ -57,58 +57,58 @@ C  = [concurrence_2q(r) for r in rhos]
 
 # --- plots ---
 
-os.makedirs("exports/plots", exist_ok=True)
-os.makedirs("exports/animations", exist_ok=True)
+os.makedirs("exports/plots/2_qubits", exist_ok=True)
+os.makedirs("exports/animations/2_qubits", exist_ok=True)
 
 radius_2q(pts0_A, dt, title="A radius without noise")
-plt.gcf().savefig("exports/plots/2q_radius_A_noiseless.png", dpi=300, bbox_inches="tight")
+plt.gcf().savefig("exports/plots/2_qubits/2q_radius_A_noiseless.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 radius_2q(pts0_B, dt, title="B radius without noise")
-plt.gcf().savefig("exports/plots/2q_radius_B_noiseless.png", dpi=300, bbox_inches="tight")
+plt.gcf().savefig("exports/plots/2_qubits/2q_radius_B_noiseless.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 radius_2q(pts_A,  dt, title="A radius with noise")
-plt.gcf().savefig("exports/plots/2q_radius_A_noisy.png", dpi=300, bbox_inches="tight")
+plt.gcf().savefig("exports/plots/2_qubits/2q_radius_A_noisy.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 radius_2q(pts_B,  dt, title="B radius with noise")
-plt.gcf().savefig("exports/plots/2q_radius_B_noisy.png", dpi=300, bbox_inches="tight")
+plt.gcf().savefig("exports/plots/2_qubits/2q_radius_B_noisy.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 
 plot_purity(purity0, dt, title="System purity without noise")
-plt.gcf().savefig("exports/plots/2q_purity_noiseless.png", dpi=300, bbox_inches="tight")
+plt.gcf().savefig("exports/plots/2_qubits/2q_purity_noiseless.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 plot_purity(purity,  dt, title="System purity with noise")
-plt.gcf().savefig("exports/plots/2q_purity_noisy.png", dpi=300, bbox_inches="tight")
+plt.gcf().savefig("exports/plots/2_qubits/2q_purity_noisy.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 
 plot_entropy_lists(S0_A, dt, title="S(ρ_A) without noise")
-plt.gcf().savefig("exports/plots/2q_entropy_A_noiseless.png", dpi=300, bbox_inches="tight")
+plt.gcf().savefig("exports/plots/2_qubits/2q_entropy_A_noiseless.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 plot_entropy_lists(S0_B, dt, title="S(ρ_B) without noise")
-plt.gcf().savefig("exports/plots/2q_entropy_B_noiseless.png", dpi=300, bbox_inches="tight")
+plt.gcf().savefig("exports/plots/2_qubits/2q_entropy_B_noiseless.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 plot_entropy_lists(S_A,  dt, title="S(ρ_A) with noise")
-plt.gcf().savefig("exports/plots/2q_entropy_A_noisy.png", dpi=300, bbox_inches="tight")
+plt.gcf().savefig("exports/plots/2_qubits/2q_entropy_A_noisy.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 plot_entropy_lists(S_B,  dt, title="S(ρ_B) with noise")
-plt.gcf().savefig("exports/plots/2q_entropy_B_noisy.png", dpi=300, bbox_inches="tight")
+plt.gcf().savefig("exports/plots/2_qubits/2q_entropy_B_noisy.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 
 plot_concurrence(C0, dt, title="Concurrence C(t) without noise")
-plt.gcf().savefig("exports/plots/2q_concurrence_noiseless.png", dpi=300, bbox_inches="tight")
+plt.gcf().savefig("exports/plots/2_qubits/2q_concurrence_noiseless.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 plot_concurrence(C,  dt, title="Concurrence C(t) with noise")
-plt.gcf().savefig("exports/plots/2q_concurrence_noisy.png", dpi=300, bbox_inches="tight")
+plt.gcf().savefig("exports/plots/2_qubits/2q_concurrence_noisy.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 # --- animations ---
@@ -116,11 +116,11 @@ plt.close()
 writer = FFMpegWriter(fps=15, bitrate=1800)
 
 anim0 = animate_trajectory_2q(pts0_A, pts0_B, interval_ms=20)
-anim0[0].save("exports/animations/2q_noiseless_A.mp4", writer=writer, dpi = 80)
+anim0[0].save("exports/animations/2_qubits/2q_noiseless_A.mp4", writer=writer, dpi = 80)
 anim0[1].save("exports/animations/2q_noiseless_B.mp4", writer=writer, dpi = 80)
 plt.close()
 
 anim = animate_trajectory_2q(pts_A,  pts_B,  interval_ms=20)
-anim0[0].save("exports/animations/2q_noisy.mp4", writer=writer, dpi = 80)
-anim0[1].save("exports/animations/2q_nois_B.mp4", writer=writer, dpi = 80)
+anim0[0].save("exports/animations/2_qubits/2q_noisy.mp4", writer=writer, dpi = 80)
+anim0[1].save("exports/animations/2_qubits/2q_nois_B.mp4", writer=writer, dpi = 80)
 plt.close()
