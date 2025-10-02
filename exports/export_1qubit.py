@@ -39,19 +39,19 @@ pts  = continuous_path(rho0, seq, steps_per_gate=steps_per_gate,
 
 # --- diagnostics ---
 
-os.makedirs("exports/plots", exist_ok=True)
-os.makedirs("exports/animations", exist_ok=True)
+os.makedirs("exports/plots/1_qubit", exist_ok=True)
+os.makedirs("exports/animations/1_qubit", exist_ok=True)
 
 radius(pts0, dt, "Radius without noise")
-plt.gcf().savefig("exports/plots/1q_radius_noiseless.png", dpi=300, bbox_inches="tight")
+plt.gcf().savefig("exports/plots/1_qubit/1q_radius_noiseless.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 radius(pts, dt, "Radius with noise")
-plt.gcf().savefig("exports/plots/1q_radius_noisy.png", dpi=300, bbox_inches="tight")
+plt.gcf().savefig("exports/plots/1_qubit/1q_radius_noisy.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 fidelity(pts0, pts, dt, "Fidelity between noisy and noiseless trajectories")
-plt.gcf().savefig("exports/plots/1q_fidelity.png", dpi=300, bbox_inches="tight")
+plt.gcf().savefig("exports/plots/1_qubit/1q_fidelity.png", dpi=300, bbox_inches="tight")
 plt.close()
 
 # --- animation ---
@@ -59,11 +59,11 @@ plt.close()
 writer = FFMpegWriter(fps=15, bitrate=1800)
 
 anim0 = animate_trajectory(pts0, interval_ms=10)
-anim0.save("exports/animations/1q_noiseless.mp4", writer=writer, dpi = 80)
+anim0.save("exports/animations/1_qubit/1q_noiseless.mp4", writer=writer, dpi = 80)
 plt.close()
 
 anim  = animate_trajectory(pts,  interval_ms=10)
-anim.save("exports/animations/1q_noisy.mp4", writer=writer, dpi = 80)
+anim.save("exports/animations/1_qubit/1q_noisy.mp4", writer=writer, dpi = 80)
 plt.close()
 
 
