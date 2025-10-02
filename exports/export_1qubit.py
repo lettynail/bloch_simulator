@@ -20,7 +20,7 @@ rho0 = DensityMatrix(ket0)
 
 # --- gate sequence ---
 seq = [H, Y, T, X, H, S]
-steps_per_gate = 40
+steps_per_gate = 300
 dt = 0.001
 
 # --- noise window & discretized channels ---
@@ -65,7 +65,6 @@ plt.close()
 anim  = animate_trajectory(pts,  interval_ms=10)
 anim.save("exports/animations/1q_noisy.mp4", writer=writer, dpi = 80)
 plt.close()
-
 
 
 
