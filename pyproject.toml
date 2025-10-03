@@ -1,30 +1,42 @@
 [build-system]
-requires = ["setuptools>=68", "wheel"]
+requires = ["setuptools>=77", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "bloch-simulator"
 version = "0.1.0"
-description = "Bloch sphere simulators for 1 and 2 qubits with Kraus noise, metrics, and animations."
+description = "Simulateur 1–2 qubits avec bruit (T1, T2, dépolarisation), métriques (pureté, entropie, concurrence), et visualisation Bloch."
 readme = "README.md"
 requires-python = ">=3.10"
-license = {file = "LICENSE"}
-authors = [{name = "LETTY Naïl"}]
+license = "MIT"                         
+authors = [
+  { name = "Ton Nom", email = "ton.email@example.com" }
+]
+keywords = ["quantum", "bloch", "qiskit", "kraus", "t1", "t2", "depolarization"]
 dependencies = [
   "numpy>=1.24",
+  "scipy>=1.10",
   "matplotlib>=3.7",
-  "scipy>=1.11",
-  "qiskit>=1.0",
-  "setuptools>=80.9.0"
+  "qiskit>=1.0"
 ]
+
 
 [project.urls]
 Homepage = "https://github.com/lettynail/bloch_simulator"
+Issues = "https://github.com/lettynail/bloch_simulator/issues"
 
-[tool.setuptools.packages.find]
-where = ["src"]
 
 [project.scripts]
-bloch-1q = "bloch_simulator.bloch_simulator_1_qbit:main"
-bloch-2q = "bloch_simulator.bloch_simulator_2_qbits:main"
+bloch-sim = "bloch_simulator.cli:main"   
 
+
+[tool.setuptools.packages.find]
+where = ["src"]                           
+include = ["bloch_simulator*"]
+
+
+[tool.setuptools.package-data]
+bloch_simulator = ["py.typed"]
+
+
+project.license-files = ["LICENSE", "LICENSE.md"]
