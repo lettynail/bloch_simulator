@@ -14,7 +14,8 @@ dependencies = [
   "numpy>=1.24",
   "matplotlib>=3.7",
   "scipy>=1.11",
-  "qiskit>=1.0"
+  "qiskit>=1.0",
+  "setuptools>=80.9.0"
 ]
 
 [project.urls]
@@ -26,3 +27,4 @@ where = ["src"]
 [project.scripts]
 bloch-1q = "bloch_simulator.bloch_simulator_1_qbit:main"
 bloch-2q = "bloch_simulator.bloch_simulator_2_qbits:main"
+
