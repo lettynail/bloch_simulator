@@ -59,12 +59,12 @@ pip install -r requirements.txt
 
 Run 1-qubit simulation:
 
-python bloch_simulator_1_qbit.py
+python examples/example_1qubit.py
 
 
 Run 2-qubit simulation:
 
-python bloch_simulator_2_qbits.py
+python examples/example_2qubits.py
 
 
 Both scripts generate:
