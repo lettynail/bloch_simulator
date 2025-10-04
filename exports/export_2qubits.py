@@ -121,6 +121,6 @@ anim0[1].save("exports/animations/2_qubits/2q_noiseless_B.mp4", writer=writer, d
 plt.close()
 
 anim = animate_trajectory(pts_A,  pts_B,  interval_ms=20)
-anim0[0].save("exports/animations/2_qubits/2q_noisy_A.mp4", writer=writer, dpi = 80)
-anim0[1].save("exports/animations/2_qubits/2q_noisy_B.mp4", writer=writer, dpi = 80)
+anim[0].save("exports/animations/2_qubits/2q_noisy_A.mp4", writer=writer, dpi = 80)
+anim[1].save("exports/animations/2_qubits/2q_noisy_B.mp4", writer=writer, dpi = 80)
 plt.close()
