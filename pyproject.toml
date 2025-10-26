@@ -5,12 +5,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "bloch-simulator"
 version = "0.1.0"
-description = "Simulateur 1–2 qubits avec bruit (T1, T2, dépolarisation), métriques (pureté, entropie, concurrence), et visualisation Bloch."
+description = "1–2 qubits simulator with noise (T1, T2, depolarisation), measures (purity, entropy, concurrence), and Bloch visualization."
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"                         
 authors = [
-  { name = "Ton Nom", email = "ton.email@example.com" }
+  { name = "LETTY", email = "nail.letty@gmail.com" }
 ]
 keywords = ["quantum", "bloch", "qiskit", "kraus", "t1", "t2", "depolarization"]
 dependencies = [
@@ -40,3 +40,4 @@ bloch_simulator = ["py.typed"]
 
 
 project.license-files = ["LICENSE", "LICENSE.md"]
+
